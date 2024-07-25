@@ -1,0 +1,10 @@
+.collabignore
+.vs
+FlappyBird.sln
+Assembly-CSharp.csproj
+Logs/
+Packages
+ProjectSettings
+Temp
+UserSettings
+obj
