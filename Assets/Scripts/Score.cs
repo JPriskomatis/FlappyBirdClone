@@ -21,6 +21,6 @@ public class Score : MonoBehaviour
     private void IncreaseScore()
     {
         score++;
-        scoreText.text = "Score: " + score;
+        scoreText.text = score.ToString();
     }
 }

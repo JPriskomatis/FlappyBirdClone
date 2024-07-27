@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -50,6 +50,6 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
-        EditorSceneManager.LoadScene(0);
+        SceneManager.LoadScene(0);
     }
 }
