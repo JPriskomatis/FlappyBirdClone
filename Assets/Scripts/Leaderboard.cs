@@ -14,7 +14,7 @@ public class Leaderboard : MonoBehaviour
     private void Start()
     {
         GetLeaderboard();
-    }
+    } 
     public void GetLeaderboard()
     {
         LeaderboardCreator.GetLeaderboard(publicLeaderboardKey, (msg) =>
@@ -23,8 +23,6 @@ public class Leaderboard : MonoBehaviour
 
             for (int i = 0; i < loopLength; i++)
             {
-                
-
                 names[i].text = msg[i].Username;
                 scores[i].text = msg[i].Score.ToString();
             }
@@ -35,9 +33,9 @@ public class Leaderboard : MonoBehaviour
     {
         Debug.Log($"Uploading new entry: Username = {username}, Score = {score}");
 
-        LeaderboardCreator.UploadNewEntry(publicLeaderboardKey, username, score, ((msg) =>
+        LeaderboardCreator.UploadNewEntry(publicLeaderboardKey, username, score, (msg) =>
         {
             GetLeaderboard();
-        }));
+        });
     }
 }
