@@ -8,10 +8,13 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public GameObject startButton;
+    public GameObject restartButton;
+    public GameObject leaderboardButton;
     public Player player;
 
     public TextMeshProUGUI gameOverCountdown;
-    public float countTimer = 5;
+    public float countTimer = 3;
+
 
     // Start is called before the first frame update
     void Start()
@@ -20,21 +23,25 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
     }
 
-    private void Update()
+    private void OnEnable()
     {
-        if (player.isDead)
-        {
-            gameOverCountdown.gameObject.SetActive(true);
-            countTimer -= Time.unscaledDeltaTime;
-        }
-
-        gameOverCountdown.text = "Restarting in " + (countTimer).ToString("0");
-
-        if (countTimer < 0)
-        {
-            RestartGame();
-        }
+        Player.onDeath += DeathScreen;
     }
+
+    private void OnDisable()
+    {
+        Player.onDeath -= DeathScreen;
+
+    }
+
+    private void DeathScreen()
+    {
+
+        leaderboardButton.SetActive(true);
+        restartButton.SetActive(true);
+    }
+
+
 
     public void StartGame()
     {
@@ -52,4 +59,5 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
 }
