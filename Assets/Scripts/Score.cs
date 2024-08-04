@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -6,8 +7,9 @@ using UnityEngine;
 public class Score : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI scoreText;
-    private int score;
+    public static int score;
 
+    public static event Action OnScore;
     private void OnEnable()
     {
         PipesScore.onPass += IncreaseScore;
@@ -20,7 +22,14 @@ public class Score : MonoBehaviour
 
     private void IncreaseScore()
     {
+
         score++;
+        
         scoreText.text = score.ToString();
+
+        if (score == 1)
+        {
+            OnScore?.Invoke();
+        }
     }
 }

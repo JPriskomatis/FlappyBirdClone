@@ -37,7 +37,6 @@ public class GameManager : MonoBehaviour
     private void DeathScreen()
     {
 
-        leaderboardButton.SetActive(true);
         restartButton.SetActive(true);
     }
 

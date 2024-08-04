@@ -11,3 +11,7 @@ Temp
 UserSettings
 obj
 Build
+LootLockerExamples.csproj
+Unisave.Editor.csproj
+Unisave.Testing.csproj
+Unisave.csproj

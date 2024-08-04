@@ -1,41 +1,53 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using Dan.Main;
+using TMPro;
+using System.Security.Cryptography.X509Certificates;
 
 public class Leaderboard : MonoBehaviour
 {
     [SerializeField] private List<TextMeshProUGUI> names;
-    [SerializeField] private List<TextMeshProUGUI> scores;
 
-    private string publicLeaderboardKey = "da9a51a14990fc71840f1ab4907683c1e704418182b3ec3c3d8a639027a6c72c";
+    
+
+    private string publicKey = "363eb8336b2c1335d951b80f2a42d349ac32a3d4ea1804ddb868d10e4b4d1acd";
 
     private void Start()
     {
         GetLeaderboard();
-    } 
+    }
+
     public void GetLeaderboard()
     {
-        LeaderboardCreator.GetLeaderboard(publicLeaderboardKey, (msg) =>
+        Leaderboards.FlappyBirdClone.GetEntries(entries =>
         {
-            int loopLength = (msg.Length < names.Count) ? msg.Length : names.Count;
+            foreach (var t in names)
+                t.text = "";
 
-            for (int i = 0; i < loopLength; i++)
+            var length = Mathf.Min(names.Count, entries.Length);
+            for (int i = 0; i < length; i++)
             {
-                names[i].text = msg[i].Username;
-                scores[i].text = msg[i].Score.ToString();
+                Debug.Log($"Entry {i}: {entries[i].Username} - {entries[i].Score}"); // Debugging each entry
+                names[i].text = $"{entries[i].Rank}. {entries[i].Username} - {entries[i].Score}";
             }
         });
     }
 
-    public void SetLeaderboardEntry(string username, int score)
+    public void UploadEntry(string username, int score)
     {
-        Debug.Log($"Uploading new entry: Username = {username}, Score = {score}");
-
-        LeaderboardCreator.UploadNewEntry(publicLeaderboardKey, username, score, (msg) =>
+        Leaderboards.FlappyBirdClone.UploadNewEntry(username, score, isSuccessful =>
         {
-            GetLeaderboard();
+            if (isSuccessful)
+            {
+                Debug.Log($"Successfully uploaded score: {score} for username: {username}");
+                GetLeaderboard();
+            }
+            else
+            {
+                Debug.LogError("Failed to upload score");
+            }
         });
     }
+
 }
