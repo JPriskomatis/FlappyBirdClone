@@ -2,3 +2,6 @@ This is my online browser flappy bird clone game with a backened database for th
 Exported as webgl and hosted on my own ubuntu server.
 Game can be played here:
 fridaynight.gr
+
+Future Implementation:
+Implement ci/cd pipeline for automated and clean deployment.
