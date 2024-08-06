@@ -4,9 +4,12 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class GameManager : MonoBehaviour
 {
+    public static event Action OnRestart;
+
     public GameObject startButton;
     public GameObject restartButton;
     public GameObject leaderboardButton;
@@ -14,6 +17,7 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI gameOverCountdown;
     public float countTimer = 3;
+
 
 
     // Start is called before the first frame update
@@ -56,6 +60,7 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
+        OnRestart?.Invoke();
         SceneManager.LoadScene(0);
     }
 

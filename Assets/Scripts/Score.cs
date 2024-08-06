@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class Score : MonoBehaviour
 {
+
     [SerializeField] private TextMeshProUGUI scoreText;
     public static int score;
 
@@ -13,11 +14,13 @@ public class Score : MonoBehaviour
     private void OnEnable()
     {
         PipesScore.onPass += IncreaseScore;
+        GameManager.OnRestart += ResetScore;
     }
 
     private void OnDisable()
     {
         PipesScore.onPass -= IncreaseScore;
+        GameManager.OnRestart -= ResetScore;
     }
 
     private void IncreaseScore()
@@ -31,5 +34,10 @@ public class Score : MonoBehaviour
         {
             OnScore?.Invoke();
         }
+    }
+
+    private void ResetScore()
+    {
+        score = 0;
     }
 }
