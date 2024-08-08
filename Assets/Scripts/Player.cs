@@ -33,9 +33,11 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+
         onDeath?.Invoke();
         isDead = true;
         gameManager.GameOver();
+    
     }
 
 }

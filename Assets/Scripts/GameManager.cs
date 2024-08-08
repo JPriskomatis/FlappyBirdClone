@@ -6,6 +6,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
+
+public enum GameState
+{
+    Playing,
+    Pause,
+    EndScreen
+}
 public class GameManager : MonoBehaviour
 {
     public static event Action OnRestart;
@@ -18,6 +25,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI gameOverCountdown;
     public float countTimer = 3;
 
+    public static GameState gameState;
 
 
     // Start is called before the first frame update
@@ -42,12 +50,15 @@ public class GameManager : MonoBehaviour
     {
 
         restartButton.SetActive(true);
+        gameState = GameState.Pause;
+
     }
 
 
 
     public void StartGame()
     {
+        gameState = GameState.Playing;
         startButton.SetActive(false);
         Time.timeScale = 1;
     }
@@ -55,6 +66,8 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         Time.timeScale = 0;
+        gameState = GameState.EndScreen;
+
     }
 
 
@@ -62,6 +75,8 @@ public class GameManager : MonoBehaviour
     {
         OnRestart?.Invoke();
         SceneManager.LoadScene(0);
+        gameState = GameState.Pause;
+
     }
 
 }

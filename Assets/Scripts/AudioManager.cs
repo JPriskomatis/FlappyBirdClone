@@ -32,9 +32,12 @@ public class AudioManager : MonoBehaviour
     }
     private void FlapAudio()
     {
-        PlayAudio(audioFlap);
-    }
+        if(GameManager.gameState == GameState.Playing)
+        {
+            PlayAudio(audioFlap);
+        }
 
+    }
     private void HitAudio()
     {
         PlayAudio(audioHit);

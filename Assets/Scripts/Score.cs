@@ -14,12 +14,14 @@ public class Score : MonoBehaviour
     private void OnEnable()
     {
         PipesScore.onPass += IncreaseScore;
+        Banana.OnBananaPickUp += IncreaseScore;
         GameManager.OnRestart += ResetScore;
     }
 
     private void OnDisable()
     {
         PipesScore.onPass -= IncreaseScore;
+        Banana.OnBananaPickUp -= IncreaseScore;
         GameManager.OnRestart -= ResetScore;
     }
 

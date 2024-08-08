@@ -56,21 +56,21 @@
     <Analyzer Include="E:\VisualStudio\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\LeaderboardCreator\Scripts\Main\LeaderboardCreator.cs" />
     <Compile Include="Assets\LeaderboardCreator\Scripts\Utils\ConstantVariables.cs" />
-    <Compile Include="Assets\LeaderboardCreator\Scripts\Utils\LeaderboardCreatorConfig.cs" />
-    <Compile Include="Assets\LeaderboardCreator\Scripts\Utils\ExtensionMethods.cs" />
-    <Compile Include="Assets\LeaderboardCreator\Scripts\Main\LeaderboardCreatorBehaviour.cs" />
-    <Compile Include="Assets\LeaderboardCreator\Scripts\Main\LeaderboardReference.cs" />
-    <Compile Include="Assets\LeaderboardCreator\Scripts\Enums\Routes.cs" />
-    <Compile Include="Assets\LeaderboardCreator\Scripts\Enums\TimePeriodType.cs" />
-    <Compile Include="Assets\LeaderboardCreator\Scripts\Models\LeaderboardSearchQuery.cs" />
     <Compile Include="Assets\LeaderboardCreator\Scripts\Main\Leaderboards.cs" />
     <Compile Include="Assets\LeaderboardCreator\Scripts\Utils\Requests.cs" />
     <Compile Include="Assets\LeaderboardCreator\Scripts\Enums\StatusCode.cs" />
-    <Compile Include="Assets\LeaderboardCreator\Scripts\Models\Entry.cs" />
-    <Compile Include="Assets\LeaderboardCreator\Scripts\Demo\LeaderboardShowcase.cs" />
     <Compile Include="Assets\LeaderboardCreator\Scripts\Demo\EntryDisplay.cs" />
+    <Compile Include="Assets\LeaderboardCreator\Scripts\Main\LeaderboardReference.cs" />
+    <Compile Include="Assets\LeaderboardCreator\Scripts\Demo\LeaderboardShowcase.cs" />
+    <Compile Include="Assets\LeaderboardCreator\Scripts\Models\Entry.cs" />
+    <Compile Include="Assets\LeaderboardCreator\Scripts\Enums\TimePeriodType.cs" />
+    <Compile Include="Assets\LeaderboardCreator\Scripts\Enums\Routes.cs" />
+    <Compile Include="Assets\LeaderboardCreator\Scripts\Main\LeaderboardCreatorBehaviour.cs" />
+    <Compile Include="Assets\LeaderboardCreator\Scripts\Main\LeaderboardCreator.cs" />
+    <Compile Include="Assets\LeaderboardCreator\Scripts\Models\LeaderboardSearchQuery.cs" />
+    <Compile Include="Assets\LeaderboardCreator\Scripts\Utils\LeaderboardCreatorConfig.cs" />
+    <Compile Include="Assets\LeaderboardCreator\Scripts\Utils\ExtensionMethods.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\LeaderboardCreator\Scripts\Danqzq.LeaderboardCreator.asmdef" />
@@ -349,12 +349,6 @@
     <Reference Include="Unity.VisualScripting.YamlDotNet">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin">
-      <HintPath>Assets\Plugins\Unisave\Libraries\Microsoft.Owin\Microsoft.Owin.dll</HintPath>
-    </Reference>
-    <Reference Include="UnisaveJWT">
-      <HintPath>Assets\Plugins\Unisave\Libraries\UnisaveJWT\UnisaveJWT.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Burst.Unsafe">
       <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.Unsafe.dll</HintPath>
     </Reference>
@@ -363,9 +357,6 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.TextureAssets">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
-    </Reference>
-    <Reference Include="UnisaveFramework">
-      <HintPath>Assets\Plugins\Unisave\Libraries\UnisaveFramework\UnisaveFramework.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.IonicZip">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
@@ -382,23 +373,14 @@
     <Reference Include="log4netPlastic">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
     </Reference>
-    <Reference Include="LightJson">
-      <HintPath>Assets\Plugins\Unisave\Libraries\LightJson\LightJson.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Burst.Cecil.Rocks">
       <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Owin">
-      <HintPath>Assets\Plugins\Unisave\Libraries\Owin\Owin.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="RSG.Promise">
-      <HintPath>Assets\Plugins\Unisave\Libraries\RSG.Promise\RSG.Promise.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>E:\Unity Hub\2021.3.17f1\Editor\Data\PlaybackEngines\AppleTVSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
