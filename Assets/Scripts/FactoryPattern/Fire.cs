@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fire : ObstacleBase
+namespace Factoryspace
 {
-    public override void Initialize()
+    public class Fire : ObstacleBase
     {
-        Debug.Log("Fire!");
+        public override void Initialize()
+        {
+            Debug.Log("Fire!");
+        }
     }
+
 }

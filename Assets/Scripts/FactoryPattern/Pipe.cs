@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pipe : ObstacleBase
+namespace Factoryspace
 {
-    public override void Initialize()
+    public class Pipe : ObstacleBase
     {
-        Debug.Log("Pipe!");
+        public override void Initialize()
+        {
+            Debug.Log("Pipe!");
+        }
     }
+
 }
