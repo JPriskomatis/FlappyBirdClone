@@ -7,12 +7,30 @@ public class PipesScore : MonoBehaviour
 {
     public static event Action onPass;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private Transform player;  // Assign the player transform in the Unity Inspector
+
+    private void Start()
     {
-        if (collision.CompareTag("Player"))
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+    void Update()
+    {
+        CheckPosition();
+    }
+
+    void CheckPosition()
+    {
+        if (this == null || player == null)
         {
-            Debug.Log("asdfasdf");
+            Debug.LogWarning("Target Object or Player is not assigned.");
+            return;
+        }
+
+        // Check if the target object is to the left of the player
+        if (this.transform.position.x < player.position.x)
+        {
             onPass?.Invoke();
+            Destroy(this);
         }
     }
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4161604928420178788}
   - component: {fileID: 4838057464287247568}
   - component: {fileID: -3164454889052180153}
+  - component: {fileID: 8012856883737084407}
   m_Layer: 0
   m_Name: FirePrefab
   m_TagString: Untagged
@@ -60,6 +61,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2.3
+--- !u!114 &8012856883737084407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4161604928420178789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18ccb6e94d0570849979a7ee66d36924, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4161604928438672790
 GameObject:
   m_ObjectHideFlags: 0
