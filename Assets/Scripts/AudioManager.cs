@@ -38,7 +38,6 @@ public class AudioManager : MonoBehaviour
         }
 
     }
-
     private void HitAudio()
     {
         PlayAudio(audioHit);

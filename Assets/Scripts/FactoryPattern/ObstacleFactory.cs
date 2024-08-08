@@ -7,7 +7,8 @@ using UnityEngine;
 public enum ObstacleType
 {
     Pipe,
-    Fire
+    Fire,
+    Banana
 }
 
 public class ObstacleFactory : MonoBehaviour
@@ -24,6 +25,9 @@ public class ObstacleFactory : MonoBehaviour
                 break;
             case ObstacleType.Fire:
                 obstacle = Instantiate(Resources.Load<Fire>("FirePrefab"), position, Quaternion.identity);
+                break;
+            case ObstacleType.Banana:
+                obstacle = Instantiate(Resources.Load<Banana>("BananaPrefab"), position, Quaternion.identity);
                 break;
         }
 
