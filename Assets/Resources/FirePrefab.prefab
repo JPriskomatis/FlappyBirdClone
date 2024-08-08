@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 4161604928420178789}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.38058516, y: -1.03, z: -5.108263}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4161604928438672873}
@@ -70,6 +70,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4161604928438672873}
   - component: {fileID: 4161604928438672872}
+  - component: {fileID: 2833716133418500728}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -86,7 +87,7 @@ Transform:
   m_GameObject: {fileID: 4161604928438672790}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4161604928420178788}
@@ -133,7 +134,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 9
-  m_Sprite: {fileID: 21300000, guid: b062883cf0387cc4b919c9be72a35a37, type: 3}
+  m_Sprite: {fileID: 287394874, guid: f00cfdb8f44db8943aaed7eae398c96e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -144,6 +145,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &2833716133418500728
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4161604928438672790}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0675fde6c5b4f914988ef8cd17391c50, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &4161604929596331684
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,6 +210,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.047823906, y: -0.049595416}
-  m_Size: {x: 0.5569987, y: 0.99228036}
+  m_Offset: {x: -0.022089496, y: -0.060704947}
+  m_Size: {x: 0.21959189, y: 0.4769361}
   m_Direction: 0
