@@ -36,6 +36,7 @@ public class Spawner : MonoBehaviour
         time += Time.deltaTime;
     }
 
+    //We select randomly an obstacle;
     ObstacleType SelectObstacle()
     {
         ObstacleType[] obstacleTypes = (ObstacleType[])System.Enum.GetValues(typeof(ObstacleType));

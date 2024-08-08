@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+//An enum list of all our obstacles;
 public enum ObstacleType
 {
     Pipe,
@@ -11,6 +12,7 @@ public enum ObstacleType
 
 public class ObstacleFactory : MonoBehaviour
 {
+    //Iterations through our type to see which obstacle we will instantiate;
     public ObstacleBase CreateObstacle(ObstacleType type, Vector3 position)
     {
         ObstacleBase obstacle = null;
@@ -25,6 +27,7 @@ public class ObstacleFactory : MonoBehaviour
                 break;
         }
 
+        //We cann the Initialize function from within our obstalce;
         obstacle.Initialize();
         return obstacle;
     }
