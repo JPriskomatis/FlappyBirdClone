@@ -3,9 +3,9 @@ name: Build and Deploy WebGL
 on:
   push:
     branches:
-      - main  # Trigger on pushes to the main branch
+      - main
       - cicd
- 
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,11 +14,21 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v3
 
-    - name: Setup Unity
+    - name: Cache Unity Library
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.cache/unity3d
+          ~/.local/share/unity3d
+        key: ${{ runner.os }}-unity-${{ hashFiles('**/Packages/manifest.json') }}
+        restore-keys: |
+          ${{ runner.os }}-unity-
+
+    - name: Set Up Unity
       uses: game-ci/unity-builder@v2
       with:
-        unityVersion: 2021.3.17f1  # Replace with your Unity version
-        platforms: WebGL
+        unityVersion: 2021.3.17f1
+        targetPlatform: WebGL
 
     - name: Build Project
       uses: game-ci/unity-builder@v2
@@ -51,4 +61,4 @@ jobs:
         port: 22
         script: |
           mkdir -p /var/www/Build/
-          rsync -avz --delete ./Build/ /var/www/Build/
+          rsync -avz --delete ./build/ /var/www/Build/
