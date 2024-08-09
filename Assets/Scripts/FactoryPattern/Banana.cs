@@ -3,19 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Banana : ObstacleBase
+namespace Factoryspace
 {
-
-    public static event Action OnBananaPickUp;
-    public override void Initialize()
+    public class Banana : ObstacleBase
     {
-        Debug.Log("Banana!");
+
+        public static event Action OnBananaPickUp;
+        public override void Initialize()
+        {
+            Debug.Log("Banana!");
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            Debug.Log("Increase score");
+            OnBananaPickUp?.Invoke();
+            Destroy(this.gameObject);
+
+        }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log("Increase score");
-        OnBananaPickUp?.Invoke();
-        
-    }
 }

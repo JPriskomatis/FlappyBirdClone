@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace Factoryspace
 {
-    public class Fire : ObstacleBase
+    public class Tower : ObstacleBase
     {
         public override void Initialize()
         {
-            Debug.Log("Fire!");
+            Debug.Log("Tower!");
         }
     }
 

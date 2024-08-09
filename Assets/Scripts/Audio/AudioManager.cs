@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Playerspace;
+using Scorespace;
 public class AudioManager : MonoBehaviour
 {
     public AudioSource audioSource;
