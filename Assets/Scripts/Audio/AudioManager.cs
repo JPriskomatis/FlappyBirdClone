@@ -3,16 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using Playerspace;
 using Scorespace;
+using UnityEditor.TextCore.Text;
 public class AudioManager : MonoBehaviour
 {
     public AudioSource audioSource;
+    private bool pipe = true;
 
-    [SerializeField] private AudioClip audioDeath, audioFlap, audioHit, audioPass;
+    [SerializeField] private AudioClip audioDeath, audioFlap, audioHit, audioPass, allahuAudio;
     private void OnEnable()
     {
         Player.onDeath += HitAudio;
         Player.onFlap += FlapAudio;
         PipesScore.onPass += PassAudio;
+        Score.OnChangeAudio += ChangeHitAudio;
     }
 
     private void OnDisable()
@@ -20,6 +23,11 @@ public class AudioManager : MonoBehaviour
         Player.onDeath -= HitAudio;
         Player.onFlap -= FlapAudio;
         PipesScore.onPass -= PassAudio;
+        Score.OnChangeAudio -= ChangeHitAudio;
+    }
+    private void ChangeHitAudio()
+    {
+        pipe = false;
     }
 
     private void PassAudio()
@@ -41,7 +49,18 @@ public class AudioManager : MonoBehaviour
     }
     private void HitAudio()
     {
-        PlayAudio(audioHit);
+        if (pipe)
+        {
+            PlayAudio(audioHit);
+        }
+        else
+        {
+            AllahuAudio();
+        }
+    }
+    private void AllahuAudio()
+    {
+        PlayAudio(allahuAudio);
     }
 
     private void PlayAudio(AudioClip clip)

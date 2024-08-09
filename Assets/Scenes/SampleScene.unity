@@ -3662,6 +3662,7 @@ MonoBehaviour:
   audioFlap: {fileID: 8300000, guid: 8b5474f1acb299b4db445ba39900f670, type: 3}
   audioHit: {fileID: 8300000, guid: 268b25ed58a45a14eb060d97be6b526c, type: 3}
   audioPass: {fileID: 8300000, guid: 429aa5d0955b5d94394cf67fa5de5157, type: 3}
+  allahuAudio: {fileID: 8300000, guid: b216e39f6497f9b48a456415bfed4c5f, type: 3}
 --- !u!82 &1907929916
 AudioSource:
   m_ObjectHideFlags: 0

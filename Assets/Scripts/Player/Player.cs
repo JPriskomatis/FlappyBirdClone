@@ -1,3 +1,4 @@
+using Factoryspace;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -37,8 +38,10 @@ namespace Playerspace
         {
 
             onDeath?.Invoke();
+
             isDead = true;
             gameManager.GameOver();
+
 
         }
 
