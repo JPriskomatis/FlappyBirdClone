@@ -1,6 +1,8 @@
+using Playerspace;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 
 namespace Factoryspace
 {
@@ -13,7 +15,17 @@ namespace Factoryspace
 
         public ObstacleFactory obstacleFactory;
 
+        private bool plane = false;
 
+        private void OnEnable()
+        {
+            ChangeSprite.OnChangeSprite += EnableTower;
+        }
+
+        private void OnDisable()
+        {
+            ChangeSprite.OnChangeSprite -= EnableTower;
+        }
 
         void Update()
         {
@@ -38,14 +50,27 @@ namespace Factoryspace
             time += Time.deltaTime;
         }
 
+        void EnableTower()
+        {
+            plane = true;
+        }
         //We select randomly an obstacle;
         ObstacleType SelectObstacle()
         {
             ObstacleType[] obstacleTypes = (ObstacleType[])System.Enum.GetValues(typeof(ObstacleType));
-
             ObstacleType selectedObstacle = obstacleTypes[Random.Range(0, obstacleTypes.Length)];
 
-            return selectedObstacle;
+            // Recursively reselect if the condition is met
+            if (plane && selectedObstacle == ObstacleType.Pipe)
+            {
+                return SelectObstacle(); // Capture the result of the recursive call
+            }
+            if (!plane && selectedObstacle == ObstacleType.Tower)
+            {
+                return SelectObstacle(); // Capture the result of the recursive call
+            }
+
+            return selectedObstacle; // Return the final selected obstacle
         }
 
         ObstacleBase SpawnObstacle(ObstacleType type, Vector3 position)

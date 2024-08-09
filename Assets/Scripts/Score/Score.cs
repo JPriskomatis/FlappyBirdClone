@@ -13,6 +13,8 @@ namespace Scorespace {
         public static int score;
 
         public static event Action OnScore;
+        public static event Action OnChangeMode;
+
         private void OnEnable()
         {
             PipesScore.onPass += IncreaseScore;
@@ -37,6 +39,10 @@ namespace Scorespace {
             if (score == 1)
             {
                 OnScore?.Invoke();
+            }
+            if(score == 15)
+            {
+                OnChangeMode?.Invoke();
             }
         }
 

@@ -4,16 +4,12 @@ using UnityEngine;
 
 namespace Factoryspace
 {
-
-
-    public class Pipe : ObstacleBase
+    public class Tower : ObstacleBase
     {
-
         public override void Initialize()
         {
-            Debug.Log("Pipe!");
+            Debug.Log("Tower!");
         }
-
     }
 
 }

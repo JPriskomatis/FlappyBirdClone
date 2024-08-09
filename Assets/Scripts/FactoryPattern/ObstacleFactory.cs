@@ -10,7 +10,8 @@ namespace Factoryspace
     {
         Pipe,
         Fire,
-        Banana
+        Banana,
+        Tower
     }
 
     public class ObstacleFactory : MonoBehaviour
@@ -30,6 +31,9 @@ namespace Factoryspace
                     break;
                 case ObstacleType.Banana:
                     obstacle = Instantiate(Resources.Load<Banana>("BananaPrefab"), position, Quaternion.identity);
+                    break;
+                case ObstacleType.Tower:
+                    obstacle = Instantiate(Resources.Load<Tower>("TowerPrefab"), position, Quaternion.identity);
                     break;
             }
 
